@@ -172,6 +172,8 @@ public class SettingsActivity extends Activity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.root_preferences);
 
+            findPreference("version").setSummary(BuildConfig.VERSION_NAME);
+
             final var activity = (SettingsActivity) getActivity();
             if (activity == null) return;
             service = activity.service;
