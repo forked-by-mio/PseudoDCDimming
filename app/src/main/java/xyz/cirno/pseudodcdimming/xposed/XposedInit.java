@@ -80,6 +80,7 @@ public class XposedInit implements IXposedHookLoadPackage {
                 IBinder.class,
                 boolean.class,
                 XposedHelpers.findClass("com.android.server.display.LocalDisplayAdapter$SurfaceControlProxy", classLoader),
+                long.class,
                 new XC_MethodHook() {
                     @Override
                     protected void afterHookedMethod(MethodHookParam param) throws Throwable {
