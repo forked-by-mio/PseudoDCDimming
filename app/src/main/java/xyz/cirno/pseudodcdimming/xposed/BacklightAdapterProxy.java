@@ -13,7 +13,7 @@ public class BacklightAdapterProxy {
 
     public void setBacklight(float sdrBacklight, float sdrNits, float backlight, float nits) {
         try {
-            setBacklightMethod.invoke(adapter, sdrBacklight, sdrNits, backlight, nits);
+            setBacklightMethod.invoke(adapter, sdrBacklight, sdrNits, backlight, nits, 0, 0);
         } catch (Exception e) {
             // ignore
         }

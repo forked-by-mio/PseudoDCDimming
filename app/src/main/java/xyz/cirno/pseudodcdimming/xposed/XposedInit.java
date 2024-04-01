@@ -53,7 +53,8 @@ public class XposedInit implements IXposedHookLoadPackage {
             float.class,  // sdrBacklight
             float.class,  // sdrNits
             float.class,  // backlight
-            float.class   // nits
+            float.class,   // nits
+                int.class, int.class
         );
 
         XposedHelpers.findAndHookConstructor(localDisplayDevice,
@@ -109,6 +110,8 @@ public class XposedInit implements IXposedHookLoadPackage {
                 final var requestSdrNits = (float)param.args[1];
                 final var requestBacklight = (float)param.args[2];
                 final var requestNits = (float)param.args[3];
+                final var v5 = (int)param.args[4];
+                final var v6 = (int)param.args[5];
 
                 var request = new BacklightRequest(requestSdrBacklight, requestSdrNits, requestBacklight, requestNits);
 
